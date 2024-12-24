@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcv38m1mx3h1m"]
+
+[ext_resource type="PackedScene" uid="uid://bnh7xhx65fgtr" path="res://Scenes/playercharacter.tscn" id="1_fdd0d"]
+[ext_resource type="Texture2D" uid="uid://cwflnsae6n7p8" path="res://Assets/BG Sprites/background_layer_1.png" id="2_1i058"]
+[ext_resource type="Texture2D" uid="uid://dklxjnjevggju" path="res://Assets/BG Sprites/background_layer_2.png" id="3_2lb2s"]
+[ext_resource type="Texture2D" uid="uid://exb8f7l2l8ow" path="res://Assets/BG Sprites/background_layer_3.png" id="4_77iiu"]
+[ext_resource type="Texture2D" uid="uid://cha82legffwn4" path="res://Assets/Foreground/rock_1.png" id="5_i6v82"]
+[ext_resource type="Texture2D" uid="uid://cd2dmb45rlv3j" path="res://Assets/Foreground/rock_3.png" id="6_prjoq"]
+[ext_resource type="Texture2D" uid="uid://be168t0ydorvr" path="res://Assets/Foreground/rock_2.png" id="7_1yjsd"]
+[ext_resource type="Texture2D" uid="uid://3bpmj0h3wf25" path="res://Assets/Foreground/sign.png" id="8_t33ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he65p"]
+size = Vector2(1148, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_fdd0d")]
+position = Vector2(0, -26)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_he65p")
+
+[node name="BG" type="Node" parent="."]
+
+[node name="BG1" type="Sprite2D" parent="BG"]
+z_index = -1
+position = Vector2(0, -290)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_1i058")
+
+[node name="BG2" type="Sprite2D" parent="BG"]
+z_index = -1
+position = Vector2(-1, -289)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_2lb2s")
+
+[node name="BG3" type="Sprite2D" parent="BG"]
+z_index = -1
+position = Vector2(0, -290)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("4_77iiu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1.16415e-10, -291)
+rotation = 3.14159
+scale = Vector2(0.12431, -1.55529)
+
+[node name="FG" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-545, 4.5)
+scale = Vector2(6, 6)
+texture = ExtResource("5_i6v82")
+
+[node name="Sprite2D2" type="Sprite2D" parent="FG"]
+z_index = 5
+position = Vector2(-420, -8.5)
+scale = Vector2(6, 6)
+texture = ExtResource("6_prjoq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-269, 3.5)
+scale = Vector2(6, 6)
+texture = ExtResource("7_1yjsd")
+
+[node name="Sprite2D4" type="Sprite2D" parent="FG"]
+z_index = 5
+position = Vector2(-146.888, -2.44387)
+scale = Vector2(6, 6)
+texture = ExtResource("6_prjoq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-60.6, 1.46)
+scale = Vector2(6, 6)
+texture = ExtResource("5_i6v82")
+
+[node name="Sprite2D6" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(65.4, -11.54)
+scale = Vector2(6, 6)
+texture = ExtResource("6_prjoq")
+
+[node name="Sprite2D7" type="Sprite2D" parent="FG"]
+z_index = 5
+position = Vector2(216, 1.5)
+scale = Vector2(6, 6)
+texture = ExtResource("7_1yjsd")
+
+[node name="Sprite2D8" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(339, -2.5)
+scale = Vector2(6, 6)
+texture = ExtResource("6_prjoq")
+
+[node name="Sprite2D11" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(448, -78.5)
+scale = Vector2(6, 6)
+texture = ExtResource("8_t33ua")
+
+[node name="Sprite2D9" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(399, 11.5)
+scale = Vector2(6, 6)
+texture = ExtResource("5_i6v82")
+
+[node name="Sprite2D10" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(500.4, -7.54)
+scale = Vector2(6, 6)
+texture = ExtResource("6_prjoq")

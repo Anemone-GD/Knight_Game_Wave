@@ -1,0 +1,212 @@
+[gd_scene load_steps=21 format=3 uid="uid://dcv38m1mx3h1m"]
+
+[ext_resource type="PackedScene" uid="uid://bnh7xhx65fgtr" path="res://Scenes/playercharacter.tscn" id="1_k5yvo"]
+[ext_resource type="Script" path="res://Scripts/lobby_level.gd" id="1_qhh0j"]
+[ext_resource type="Texture2D" uid="uid://cwflnsae6n7p8" path="res://Assets/BG Sprites/background_layer_1.png" id="2_qi48q"]
+[ext_resource type="Texture2D" uid="uid://dklxjnjevggju" path="res://Assets/BG Sprites/background_layer_2.png" id="3_hslm8"]
+[ext_resource type="Texture2D" uid="uid://exb8f7l2l8ow" path="res://Assets/BG Sprites/background_layer_3.png" id="4_b8mbu"]
+[ext_resource type="Texture2D" uid="uid://cha82legffwn4" path="res://Assets/Foreground/rock_1.png" id="5_lvssr"]
+[ext_resource type="Texture2D" uid="uid://cd2dmb45rlv3j" path="res://Assets/Foreground/rock_3.png" id="6_fl8fl"]
+[ext_resource type="Texture2D" uid="uid://be168t0ydorvr" path="res://Assets/Foreground/rock_2.png" id="7_j2e5h"]
+[ext_resource type="Texture2D" uid="uid://b22ys6tkiiws7" path="res://Assets/Foreground/fence_1.png" id="8_exm4u"]
+[ext_resource type="Texture2D" uid="uid://3bpmj0h3wf25" path="res://Assets/Foreground/sign.png" id="8_ph6h6"]
+[ext_resource type="Texture2D" uid="uid://c8rgag7euxb45" path="res://Assets/Foreground/shop_anim.png" id="9_33iga"]
+[ext_resource type="Texture2D" uid="uid://oc2jdjqyhm86" path="res://Assets/Foreground/lamp.png" id="10_7ho2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he65p"]
+size = Vector2(1229, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uojwj"]
+atlas = ExtResource("9_33iga")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbuya"]
+atlas = ExtResource("9_33iga")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3lvh"]
+atlas = ExtResource("9_33iga")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mfvx"]
+atlas = ExtResource("9_33iga")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_684h7"]
+atlas = ExtResource("9_33iga")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td21x"]
+atlas = ExtResource("9_33iga")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oox66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uojwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbuya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3lvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mfvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_684h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td21x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_qhh0j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1.16415e-10, -291)
+rotation = 3.14159
+scale = Vector2(0.12431, -1.55529)
+
+[node name="Player" parent="." instance=ExtResource("1_k5yvo")]
+position = Vector2(-519, -19)
+scale = Vector2(2, 2)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(2, 35)
+
+[node name="Floor" type="CollisionShape2D" parent="Floor"]
+z_index = 6
+position = Vector2(-2.5, -4)
+shape = SubResource("RectangleShape2D_he65p")
+
+[node name="Left" type="CollisionShape2D" parent="Floor"]
+z_index = 6
+position = Vector2(-604, -4)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_he65p")
+
+[node name="Right" type="CollisionShape2D" parent="Floor"]
+z_index = 6
+position = Vector2(591, -4)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_he65p")
+
+[node name="BG" type="Node" parent="."]
+
+[node name="BG1" type="Sprite2D" parent="BG"]
+z_index = -1
+position = Vector2(0, -290)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_qi48q")
+
+[node name="BG2" type="Sprite2D" parent="BG"]
+z_index = -1
+position = Vector2(-1, -289)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_hslm8")
+
+[node name="BG3" type="Sprite2D" parent="BG"]
+z_index = -1
+position = Vector2(0, -290)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("4_b8mbu")
+
+[node name="FG" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-545, 4.5)
+scale = Vector2(8.72109, 8.7731)
+texture = ExtResource("5_lvssr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="FG"]
+z_index = 5
+position = Vector2(-420, -8.5)
+scale = Vector2(6, 6)
+texture = ExtResource("6_fl8fl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-269, 3.5)
+scale = Vector2(6, 6)
+texture = ExtResource("7_j2e5h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="FG"]
+z_index = 5
+position = Vector2(-146.888, -2.44387)
+scale = Vector2(6, 6)
+texture = ExtResource("6_fl8fl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-60.6, 1.46)
+scale = Vector2(6, 6)
+texture = ExtResource("5_lvssr")
+
+[node name="Sprite2D12" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-353, -14)
+scale = Vector2(6, 6)
+texture = ExtResource("8_exm4u")
+
+[node name="Sprite2D13" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(344, -22)
+scale = Vector2(6, 6)
+texture = ExtResource("8_exm4u")
+
+[node name="Sprite2D6" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(65.4, -11.54)
+scale = Vector2(6, 6)
+texture = ExtResource("6_fl8fl")
+
+[node name="Sprite2D7" type="Sprite2D" parent="FG"]
+z_index = 5
+position = Vector2(216, 1.5)
+scale = Vector2(6, 6)
+texture = ExtResource("7_j2e5h")
+
+[node name="Sprite2D8" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(339, -2.5)
+scale = Vector2(6, 6)
+texture = ExtResource("6_fl8fl")
+
+[node name="Sprite2D11" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(464, -117)
+scale = Vector2(7.36, 7.36)
+texture = ExtResource("8_ph6h6")
+
+[node name="Sprite2D14" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(-431, -135)
+scale = Vector2(-5.96, 6)
+texture = ExtResource("10_7ho2f")
+
+[node name="Sprite2D9" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(399, 11.5)
+scale = Vector2(6, 6)
+texture = ExtResource("5_lvssr")
+
+[node name="Sprite2D10" type="Sprite2D" parent="FG"]
+z_index = 4
+position = Vector2(500.4, -7.54)
+scale = Vector2(6, 6)
+texture = ExtResource("6_fl8fl")
+
+[node name="Shop" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, -291)
+scale = Vector2(4.40869, 4.40869)
+sprite_frames = SubResource("SpriteFrames_oox66")
+autoplay = "default"
+frame_progress = 0.271907
