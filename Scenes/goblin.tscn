@@ -243,8 +243,10 @@ height = 66.0
 position = Vector2(0, -53)
 scale = Vector2(1.97619, 1.98113)
 sprite_frames = SubResource("SpriteFrames_5mt1t")
-animation = &"idle"
+animation = &"atttack"
 autoplay = "idle"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -35)
